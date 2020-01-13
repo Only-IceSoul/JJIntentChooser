@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+
+    <Transition
+            motion:constraintSetEnd="@+id/end"
+            motion:constraintSetStart="@+id/start"
+            motion:duration="150">
+        <OnSwipe
+                motion:dragDirection="dragUp"
+                motion:touchAnchorId="@+id/chooserActivityContainer"
+                motion:touchAnchorSide="top"
+                motion:touchRegionId="@+id/chooserActivityContainer" />
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/finish"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="100">
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/finish"
+        motion:constraintSetStart="@+id/end"
+        motion:duration="100">
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+
+
+    </ConstraintSet>
+
+    <ConstraintSet
+            motion:deriveConstraintsFrom="@+id/start"
+            android:id="@+id/end">
+
+    </ConstraintSet>
+
+    <ConstraintSet
+            android:id="@+id/finish"
+             motion:deriveConstraintsFrom="@+id/start"
+             >
+
+    </ConstraintSet>
+
+
+
+</MotionScene>

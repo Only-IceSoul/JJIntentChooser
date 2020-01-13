@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jjlf.jjkit_intentchooser" >
+
+    <application >
+
+        <activity android:name=".JJIntentChooserActivity"
+            android:theme="@style/ChooserActivity"/>
+
+    </application>
+
+</manifest>
