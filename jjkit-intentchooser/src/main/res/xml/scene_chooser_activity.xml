@@ -9,6 +9,8 @@
             motion:constraintSetStart="@+id/start"
             motion:duration="150">
         <OnSwipe
+                motion:maxVelocity="5"
+                motion:maxAcceleration="7"
                 motion:dragDirection="dragUp"
                 motion:touchAnchorId="@+id/chooserActivityContainer"
                 motion:touchAnchorSide="top"

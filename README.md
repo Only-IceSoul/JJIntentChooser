@@ -17,7 +17,7 @@ allprojects {
 2.- Add the dependency
 ```
 dependencies {
-	        implementation 'com.github.Only-IceSoul:JJIntentChooser:1.0'
+	        implementation 'com.github.Only-IceSoul:JJIntentChooser:1.1'
 	}
 ```
 
@@ -46,7 +46,7 @@ dependencies {
 
  ActivityInfo Name
 
- ```
+ ```kotlin
    .setIgnore("com.google.android.apps.photos.picker.external.ExternalPickerActivity",etc...)
 
 ```
@@ -54,7 +54,7 @@ dependencies {
 
 # Tracking when an activity was clicked 
 
-```
+```kotlin
 class TrackingIntentChooserActivity : JJIntentChooserActivity() {
 
 
@@ -66,8 +66,9 @@ class TrackingIntentChooserActivity : JJIntentChooserActivity() {
 
     }
 
-        override fun onIntentLongClicked(resolveInfo: ResolveInfo): Boolean {
-        Toast.makeText(this, "LongClicked info: $ {resolveInfo.activityInfo.packageName}  ${resolveInfo.activityInfo.name}",Toast.LENGTH_SHORT).show()
+     override fun onIntentLongClicked(resolveInfo: ResolveInfo): Boolean {
+        Toast.makeText(this, "LongClicked info: $ {resolveInfo.activityInfo.packageName} ${resolveInfo.activityInfo.name}",Toast.LENGTH_SHORT)
+        .show()
 
                  //do something
         return super.onIntentLongClicked(resolveInfo) 
@@ -79,17 +80,18 @@ class TrackingIntentChooserActivity : JJIntentChooserActivity() {
 
 **Declare in the AndroidManifest.xml**
 
+```java
     <activity
         android:name=".TrackingActivity"
         android:theme="@style/ChooserActivity" />
-
+```
 
 **Declare in Code**
 
-
+```kotlin
     .setActivity(TrackingActivity::class.java)
     .startForResult(requestCode = 100)
-
+```
 
 
 # License

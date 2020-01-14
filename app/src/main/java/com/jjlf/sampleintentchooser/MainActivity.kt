@@ -3,6 +3,8 @@ package com.jjlf.sampleintentchooser
 import android.app.Activity
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.buttonA).setOnClickListener {
 
+
             JJIntentChooser(this)
                 .setTitle("Pick app")
                 .setIntent(PhotoHelper.getCameraIntentQuery(this))
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
                     ,  PhotoHelper.getPhotoIntentQuery(),PhotoHelper.getPhotoIntentQuery(),PhotoHelper.getPhotoIntentQuery()
                     ,PhotoHelper.getPhotoIntentQuery(),PhotoHelper.getPhotoIntentQuery()
                 )
+                .setBackground(ColorDrawable(Color.RED))
                 .setIgnore("com.google.android.apps.photos.picker.external.ExternalPickerActivity")
                 .setActivity(TrackingIntentChooserActivity::class.java)   //add theme chooserActivity to trackingactivity
                 .startForResult(100)
